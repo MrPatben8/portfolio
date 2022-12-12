@@ -13,6 +13,28 @@ canvas {
 body {
     margin: 0;
 }
+
+@font-face {
+    font-family: 'Mustica'; /*a name to be used later*/
+    src: url('/TemplateData/MusticaPro.woff'); /*URL to font*/
+}
+
+h1 {
+	color: white;
+	font-family: 'Mustica';
+	text-align: center;
+	font-size: 150%;
+	font-style: italic;
+}
+
+h2 {
+	color: white;
+	font-family: 'Mustica';
+	text-align: center;
+	font-size: 150%;
+	font-style: italic;
+}
+
 #unity-container {
     width: 100%;
     height: 100%;

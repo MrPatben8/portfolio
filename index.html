@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="description" content="Benjamin Hardy's Industrial Design Portfolio">
     <title>Portfolio</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -19,6 +20,12 @@
           <div id="unity-progress-bar-full"></div>
         </div>
         <div class="spinner"></div>
+		<h1>
+			For a better experience, try viewing this using a desktop browser.
+		</h1>
+		<h2 style="visibility:hidden">
+			This might take a moment...
+		</h2>
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
@@ -59,10 +66,20 @@
         return false;
       }());
 
+		stateChange();	  
+		function stateChange() {
+			setTimeout(function () {
+				document.getElementsByTagName('h2')[0].style.visibility = 'visible';
+			}, 5000);
+		}
+
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         <!-- config.devicePixelRatio = 1; -->
-      }
+      }else{
+		document.getElementsByTagName('h1')[0].style.display = 'none';
+	  }
+	  
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
@@ -72,6 +89,7 @@
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
+		  document.getElementsByTagName('h2')[0].textContent= "This might take a moment... " + Math.round(100 * progress) + "%";
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
@@ -83,7 +101,8 @@
             };
           }
         }).catch((message) => {
-          alert(message);
+          //alert(message);
+		  alert("There was an issue while loading the portfolio. Please try viewing it from a desktop web browser or using a more modern browser.");
         });
       };
       document.body.appendChild(script);

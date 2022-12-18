@@ -19,7 +19,7 @@ body {
     src: url('/TemplateData/MusticaPro.woff'); /*URL to font*/
 }
 
-h1 {
+h4 {
 	color: white;
 	font-family: 'Mustica';
 	text-align: center;
@@ -27,7 +27,7 @@ h1 {
 	font-style: italic;
 }
 
-h2 {
+h5 {
 	color: white;
 	font-family: 'Mustica';
 	text-align: center;

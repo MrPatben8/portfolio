@@ -29,12 +29,12 @@
           <div id="unity-progress-bar-full"></div>
         </div>
         <div class="spinner"></div>
-		<h1>
+		<h4>
 			For a better experience, try viewing this using a desktop browser.
-		</h1>
-		<h2 style="visibility:hidden">
+		</h4>
+		<h5 style="visibility:hidden">
 			This might take a moment...
-		</h2>
+		</h5>
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
@@ -78,7 +78,7 @@
 		stateChange();	  
 		function stateChange() {
 			setTimeout(function () {
-				document.getElementsByTagName('h2')[0].style.visibility = 'visible';
+				document.getElementsByTagName('h5')[0].style.visibility = 'visible';
 			}, 5000);
 		}
 
@@ -86,7 +86,7 @@
         container.className = "unity-mobile";
         <!-- config.devicePixelRatio = 1; -->
       }else{
-		document.getElementsByTagName('h1')[0].style.display = 'none';
+		document.getElementsByTagName('h4')[0].style.display = 'none';
 	  }
 	  
       loadingCover.style.display = "";
@@ -98,7 +98,7 @@
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
-		  document.getElementsByTagName('h2')[0].textContent= "This might take a moment... " + Math.round(100 * progress) + "%";
+		  document.getElementsByTagName('h5')[0].textContent= "This might take a moment... " + Math.round(100 * progress) + "%";
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
